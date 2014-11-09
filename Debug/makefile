@@ -9,6 +9,9 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/msp430_4.3.3
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
+"./CapSens/CTS_HAL.obj" \
+"./CapSens/CTS_Layer.obj" \
+"./CapSens/structure.obj" \
 "../lnk_msp430g2553.cmd" \
 -l"libc.a" \
 
@@ -20,7 +23,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include CapSens/subdir_vars.mk
 -include subdir_rules.mk
+-include CapSens/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -140,8 +145,8 @@ CapacitiveTouch.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.pp" 
-	-$(RM) "main.obj" 
+	-$(RM) "main.pp" "CapSens\CTS_HAL.pp" "CapSens\CTS_Layer.pp" "CapSens\structure.pp" 
+	-$(RM) "main.obj" "CapSens\CTS_HAL.obj" "CapSens\CTS_Layer.obj" "CapSens\structure.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
