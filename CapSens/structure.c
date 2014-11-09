@@ -35,17 +35,45 @@ const struct Element element_0 = {
 	.threshold = 50
 };
 
+const struct Element element_1 = {
+	.inputPxselRegister = (uint8_t *)&P2SEL,
+	.inputPxsel2Register = (uint8_t *)&P2SEL2,
+	.inputBits = BIT0,
+	.maxResponse = 400,
+	.threshold = 50
+};
+
+const struct Element element_2 = {
+	.inputPxselRegister = (uint8_t *)&P3SEL,
+	.inputPxsel2Register = (uint8_t *)&P3SEL2,
+	.inputBits = BIT6,
+	.maxResponse = 400,
+	.threshold = 50
+};
+
+const struct Element element_3 = {
+	.inputPxselRegister = (uint8_t *)&P2SEL,
+	.inputPxsel2Register = (uint8_t *)&P2SEL2,
+	.inputBits = BIT3,
+	.maxResponse = 400,
+	.threshold = 50
+};
+
+
 
 const struct Sensor sensor_0 =
 {
 	.halDefinition = RO_PINOSC_TA0_WDTp,
-	.numElements = 1,
+	.numElements = 4,
 	.baseOffset = 0,
 	// Pointer to elements
-	.arrayPtr[0] = &element_0, // point to first element
+	.arrayPtr[0] = &element_0,  // point to first element
+	.arrayPtr[1] = &element_1,
+	.arrayPtr[2] = &element_2,
+	.arrayPtr[3] = &element_3,
 	// Timer Information
 	.measGateSource= GATE_WDTp_SMCLK, // 0->SMCLK, 1-> ACLK
-	.accumulationCycles= WDTp_GATE_512 //512
+	.accumulationCycles= WDTp_GATE_8192 //512
 };
 
 
