@@ -1,4 +1,4 @@
 CapacitiveTouch
 ===============
 
-Test Code for Capacitive Touch on ProtoV1
+This code tests the capacitive touch capibilites of the version one prototype of the uCube.
