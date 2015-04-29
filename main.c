@@ -5,6 +5,7 @@
 /*
  * main.c
  */
+#if 0
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
 	uint16_t raw_value[4];
@@ -30,3 +31,4 @@ __interrupt void ISR_trap(void)
   /* the following will cause an access violation and result in a PUC reset */
   WDTCTL = 0;
 }
+#endif

@@ -25,7 +25,7 @@
  * @brief
  * @details
  */
-#include "structure.h"
+#include "../../CapSens/structure.h"
 
 //9 Element Structure
 
@@ -101,21 +101,22 @@ const struct Element element_16 = {
 	.threshold = 50
 };
 
+
 const struct Sensor sensor_0 =
 {
-	.halDefinition = RO_PINOSC_TA0_TA1,
+	.halDefinition = RO_PINOSC_TA0_WDTp,
 	.numElements = 9,
 	.baseOffset = 0,
 	// Pointer to elements
-	.arrayPtr[0] = &element_25,  // point to first element
-	.arrayPtr[1] = &element_24,
-	.arrayPtr[2] = &element_23,
-	.arrayPtr[3] = &element_17,
-	.arrayPtr[4] = &element_18,
+	.arrayPtr[0] = &element_11,  // point to first element
+	.arrayPtr[1] = &element_16,
+	.arrayPtr[2] = &element_17,
+	.arrayPtr[3] = &element_18,
+	.arrayPtr[4] = &element_21,
 	.arrayPtr[5] = &element_22,
-	.arrayPtr[6] = &element_21,
-	.arrayPtr[7] = &element_11,
-	.arrayPtr[8] = &element_16,
+	.arrayPtr[6] = &element_23,
+	.arrayPtr[7] = &element_24,
+	.arrayPtr[8] = &element_25,
 	// Timer Information
 	.measGateSource= GATE_WDTp_SMCLK, // 0->SMCLK, 1-> ACLK
 	.accumulationCycles= WDTp_GATE_8192 //512

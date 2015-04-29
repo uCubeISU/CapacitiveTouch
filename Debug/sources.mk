@@ -103,5 +103,7 @@ S64_DEPS__QUOTED :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
+CapTest4-25 \
+CapTest4-25/Configs \
 CapSens \
 
