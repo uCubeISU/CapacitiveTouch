@@ -98,7 +98,7 @@ int checkSurroundings(int x, int y) {
 	return status;
 }
 
-#pragma vector= PORT2_VECTOR,PORT1_VECTOR,ADC10_VECTOR,NMI_VECTOR,          \
+#pragma vector= PORT2_VECTOR,PORT1_VECTOR,ADC10_VECTOR,NMI_VECTOR,
                 TIMER0_A1_VECTOR,COMPARATORA_VECTOR,TIMER0_A0_VECTOR
 __interrupt void ISR_trap(void)
 {
