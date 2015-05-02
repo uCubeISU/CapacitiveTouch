@@ -49,6 +49,8 @@ extern const struct Element element_0;     // structure containing elements for
 
 extern const struct Sensor sensor_0;
 
+extern const struct Sensor sensor_1;
+
 
 //****** RAM ALLOCATION ********************************************************
 // TOTAL_NUMBER_OF_ELEMENTS represents the total number of elements used, even if
@@ -64,7 +66,7 @@ extern const struct Sensor sensor_0;
 // This defines the array size in the sensor strucure.  In the event that
 // RAM_FOR_FLASH is defined, then this also defines the amount of RAM space
 // allocated (global variable) for computations.
-#define MAXIMUM_NUMBER_OF_ELEMENTS_PER_SENSOR  9
+#define MAXIMUM_NUMBER_OF_ELEMENTS_PER_SENSOR  16
 //****** Choosing a  Measurement Method ****************************************
 // These variables are references to the definitions found in structure.c and
 // must be generated per the application.

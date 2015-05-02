@@ -9,8 +9,10 @@ CG_TOOL_ROOT := c:/ti/ccsv6/tools/compiler/msp430_4.3.3
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./main.obj" \
+"./CapTest4-25/16Element_test.obj" \
 "./CapTest4-25/main.obj" \
-"./CapTest4-25/Configs/structure.obj" \
+"./CapTest4-25/Configs/16Element.obj" \
+"./CapTest4-25/Configs/CapElements.obj" \
 "./CapSens/CTS_HAL.obj" \
 "./CapSens/CTS_Layer.obj" \
 "../lnk_msp430g2553.cmd" \
@@ -150,8 +152,8 @@ CapacitiveTouch.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "main.pp" "CapTest4-25\main.pp" "CapTest4-25\Configs\structure.pp" "CapSens\CTS_HAL.pp" "CapSens\CTS_Layer.pp" 
-	-$(RM) "main.obj" "CapTest4-25\main.obj" "CapTest4-25\Configs\structure.obj" "CapSens\CTS_HAL.obj" "CapSens\CTS_Layer.obj" 
+	-$(RM) "main.pp" "CapTest4-25\16Element_test.pp" "CapTest4-25\main.pp" "CapTest4-25\Configs\16Element.pp" "CapTest4-25\Configs\CapElements.pp" "CapSens\CTS_HAL.pp" "CapSens\CTS_Layer.pp" 
+	-$(RM) "main.obj" "CapTest4-25\16Element_test.obj" "CapTest4-25\main.obj" "CapTest4-25\Configs\16Element.obj" "CapTest4-25\Configs\CapElements.obj" "CapSens\CTS_HAL.obj" "CapSens\CTS_Layer.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

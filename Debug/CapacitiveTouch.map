@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v4.3.3                      
 ******************************************************************************
->> Linked Tue Apr 28 23:11:12 2015
+>> Linked Sat May 02 14:14:32 2015
 
 OUTPUT FILE NAME:   <CapacitiveTouch.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 0000c3f8
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000c548
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 0000c000   00003fe0  000004d6  00003b0a  RWIX
+  FLASH                 0000c000   00003fe0  00000674  0000396c  RWIX
   INT00                 0000ffe0   00000002  00000000  00000002  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
   INT02                 0000ffe4   00000002  00000002  00000000  RWIX
@@ -52,32 +52,31 @@ section   page    origin      length       input sections
                   000003b0    00000002     rts430_eabi.lib : boot.obj (.stack)
                   000003b2    0000004e     --HOLE--
 
-.text      0    0000c000    00000460     
-                  0000c000    00000224     main.obj (.text:main)
-                  0000c224    0000012a     CTS_HAL.obj (.text:TI_CTS_RO_PINOSC_TA0_WDTp_HAL)
-                  0000c34e    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
-                  0000c3ac    0000004c                     : lsr16.obj (.text)
-                  0000c3f8    0000001a                     : boot.obj (.text:_c_int00_noexit)
-                  0000c412    00000014                     : mult16.obj (.text)
-                  0000c426    00000010                     : epilog.obj (.text)
-                  0000c436    0000000e     CTS_Layer.obj (.text:TI_CAPT_Raw)
-                  0000c444    00000008     CTS_HAL.obj (.text:watchdog_timer)
-                  0000c44c    00000006     main.obj (.text:ISR_trap)
-                  0000c452    00000006     rts430_eabi.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
-                  0000c458    00000004                     : pre_init.obj (.text:_system_pre_init)
-                  0000c45c    00000004                     : exit.obj (.text:abort)
+.text      0    0000c000    000005aa     
+                  0000c000    00000374     16Element_test.obj (.text:main)
+                  0000c374    0000012a     CTS_HAL.obj (.text:TI_CTS_RO_PINOSC_TA0_WDTp_HAL)
+                  0000c49e    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
+                  0000c4fc    0000004c                     : lsr16.obj (.text)
+                  0000c548    0000001a                     : boot.obj (.text:_c_int00_noexit)
+                  0000c562    00000014                     : mult16.obj (.text)
+                  0000c576    00000010                     : epilog.obj (.text)
+                  0000c586    0000000e     CTS_Layer.obj (.text:TI_CAPT_Raw)
+                  0000c594    00000008     CTS_HAL.obj (.text:watchdog_timer)
+                  0000c59c    00000006     rts430_eabi.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  0000c5a2    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  0000c5a6    00000004                     : exit.obj (.text:abort)
 
-.const     0    0000c460    00000076     
-                  0000c460    00000076     structure.obj (.const)
+.const     0    0000c5aa    000000ca     
+                  0000c5aa    000000ca     16Element.obj (.const)
 
 PORT1      0    0000ffe4    00000002     
-                  0000ffe4    00000002     main.obj (.int02)
+                  0000ffe4    00000002     rts430_eabi.lib : int02.obj (.int02)
 
 PORT2      0    0000ffe6    00000002     
-                  0000ffe6    00000002     main.obj (.int03)
+                  0000ffe6    00000002     rts430_eabi.lib : int03.obj (.int03)
 
 ADC10      0    0000ffea    00000002     
-                  0000ffea    00000002     main.obj (.int05)
+                  0000ffea    00000002     rts430_eabi.lib : int05.obj (.int05)
 
 USCIAB0TX 
 *          0    0000ffec    00000002     
@@ -89,18 +88,18 @@ USCIAB0RX
 
 TIMER0_A1 
 *          0    0000fff0    00000002     
-                  0000fff0    00000002     main.obj (.int08)
+                  0000fff0    00000002     rts430_eabi.lib : int08.obj (.int08)
 
 TIMER0_A0 
 *          0    0000fff2    00000002     
-                  0000fff2    00000002     main.obj (.int09)
+                  0000fff2    00000002     rts430_eabi.lib : int09.obj (.int09)
 
 WDT        0    0000fff4    00000002     
                   0000fff4    00000002     CTS_HAL.obj (.int10)
 
 COMPARATORA 
 *          0    0000fff6    00000002     
-                  0000fff6    00000002     main.obj (.int11)
+                  0000fff6    00000002     rts430_eabi.lib : int11.obj (.int11)
 
 TIMER1_A1 
 *          0    0000fff8    00000002     
@@ -111,7 +110,7 @@ TIMER1_A0
                   0000fffa    00000002     rts430_eabi.lib : int13.obj (.int13)
 
 NMI        0    0000fffc    00000002     
-                  0000fffc    00000002     main.obj (.int14)
+                  0000fffc    00000002     rts430_eabi.lib : int14.obj (.int14)
 
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
@@ -131,7 +130,7 @@ address    name
 00000057   BCSCTL1
 00000058   BCSCTL2
 00000053   BCSCTL3
-0000c45c   C$$EXIT
+0000c5a6   C$$EXIT
 00000059   CACTL1
 0000005a   CACTL2
 000010fb   CALBC1_12MHZ
@@ -151,7 +150,6 @@ address    name
 00000001   IE2
 00000002   IFG1
 00000003   IFG2
-0000c44c   ISR_trap
 00000022   P1DIR
 00000025   P1IE
 00000024   P1IES
@@ -194,8 +192,8 @@ address    name
 00000180   TA1CTL
 0000011e   TA1IV
 00000190   TA1R
-0000c436   TI_CAPT_Raw
-0000c224   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
+0000c586   TI_CAPT_Raw
+0000c374   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
 000010db   TLV_ADC10_1_LEN
 000010da   TLV_ADC10_1_TAG
 000010c0   TLV_CHECKSUM
@@ -231,7 +229,7 @@ UNDEFED    __TI_Handler_Table_Base
 UNDEFED    __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
-0000c452   __TI_ISR_TRAP
+0000c59c   __TI_ISR_TRAP
 00000001   __TI_args_main
 00000001   __TI_exit
 0000ffe4   __TI_int02
@@ -248,50 +246,57 @@ UNDEFED    __TI_INITARRAY_Limit
 0000fffc   __TI_int14
 ffffffff   __binit__
 ffffffff   __c_args__
-0000c432   __mspabi_func_epilog_1
-0000c430   __mspabi_func_epilog_2
-0000c42e   __mspabi_func_epilog_3
-0000c42c   __mspabi_func_epilog_4
-0000c42a   __mspabi_func_epilog_5
-0000c428   __mspabi_func_epilog_6
-0000c426   __mspabi_func_epilog_7
-0000c412   __mspabi_mpyi
-0000c3ac   __mspabi_srli
-0000c3f2   __mspabi_srli_1
-0000c3ce   __mspabi_srli_10
-0000c3ca   __mspabi_srli_11
-0000c3c6   __mspabi_srli_12
-0000c3c2   __mspabi_srli_13
-0000c3be   __mspabi_srli_14
-0000c3ba   __mspabi_srli_15
-0000c3ee   __mspabi_srli_2
-0000c3ea   __mspabi_srli_3
-0000c3e6   __mspabi_srli_4
-0000c3e2   __mspabi_srli_5
-0000c3de   __mspabi_srli_6
-0000c3da   __mspabi_srli_7
-0000c3d6   __mspabi_srli_8
-0000c3d2   __mspabi_srli_9
-0000c34e   _auto_init
-0000c3f8   _c_int00
-0000c3f8   _c_int00_noexit
+0000c582   __mspabi_func_epilog_1
+0000c580   __mspabi_func_epilog_2
+0000c57e   __mspabi_func_epilog_3
+0000c57c   __mspabi_func_epilog_4
+0000c57a   __mspabi_func_epilog_5
+0000c578   __mspabi_func_epilog_6
+0000c576   __mspabi_func_epilog_7
+0000c562   __mspabi_mpyi
+0000c4fc   __mspabi_srli
+0000c542   __mspabi_srli_1
+0000c51e   __mspabi_srli_10
+0000c51a   __mspabi_srli_11
+0000c516   __mspabi_srli_12
+0000c512   __mspabi_srli_13
+0000c50e   __mspabi_srli_14
+0000c50a   __mspabi_srli_15
+0000c53e   __mspabi_srli_2
+0000c53a   __mspabi_srli_3
+0000c536   __mspabi_srli_4
+0000c532   __mspabi_srli_5
+0000c52e   __mspabi_srli_6
+0000c52a   __mspabi_srli_7
+0000c526   __mspabi_srli_8
+0000c522   __mspabi_srli_9
+0000c49e   _auto_init
+0000c548   _c_int00
+0000c548   _c_int00_noexit
 0000fffe   _reset_vector
 000003b0   _stack
-0000c458   _system_pre_init
-0000c45c   abort
+0000c5a2   _system_pre_init
+0000c5a6   abort
 ffffffff   binit
-0000c4a6   element_11
-0000c4b0   element_16
-0000c47e   element_17
-0000c488   element_18
-0000c49c   element_21
-0000c492   element_22
-0000c474   element_23
-0000c46a   element_24
-0000c460   element_25
+0000c5aa   element_1
+0000c604   element_10
+0000c60e   element_12
+0000c618   element_13
+0000c622   element_14
+0000c62c   element_15
+0000c636   element_19
+0000c5b4   element_2
+0000c640   element_20
+0000c5be   element_3
+0000c5c8   element_4
+0000c5d2   element_5
+0000c5dc   element_6
+0000c5e6   element_7
+0000c5f0   element_8
+0000c5fa   element_9
 0000c000   main
-0000c4ba   sensor_0
-0000c444   watchdog_timer
+0000c64a   sensor_1
+0000c594   watchdog_timer
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -402,51 +407,57 @@ address    name
 000010fe   CALDCO_1MHZ
 000010ff   CALBC1_1MHZ
 0000c000   main
-0000c224   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
-0000c34e   _auto_init
-0000c3ac   __mspabi_srli
-0000c3ba   __mspabi_srli_15
-0000c3be   __mspabi_srli_14
-0000c3c2   __mspabi_srli_13
-0000c3c6   __mspabi_srli_12
-0000c3ca   __mspabi_srli_11
-0000c3ce   __mspabi_srli_10
-0000c3d2   __mspabi_srli_9
-0000c3d6   __mspabi_srli_8
-0000c3da   __mspabi_srli_7
-0000c3de   __mspabi_srli_6
-0000c3e2   __mspabi_srli_5
-0000c3e6   __mspabi_srli_4
-0000c3ea   __mspabi_srli_3
-0000c3ee   __mspabi_srli_2
-0000c3f2   __mspabi_srli_1
-0000c3f8   _c_int00
-0000c3f8   _c_int00_noexit
-0000c412   __mspabi_mpyi
-0000c426   __mspabi_func_epilog_7
-0000c428   __mspabi_func_epilog_6
-0000c42a   __mspabi_func_epilog_5
-0000c42c   __mspabi_func_epilog_4
-0000c42e   __mspabi_func_epilog_3
-0000c430   __mspabi_func_epilog_2
-0000c432   __mspabi_func_epilog_1
-0000c436   TI_CAPT_Raw
-0000c444   watchdog_timer
-0000c44c   ISR_trap
-0000c452   __TI_ISR_TRAP
-0000c458   _system_pre_init
-0000c45c   C$$EXIT
-0000c45c   abort
-0000c460   element_25
-0000c46a   element_24
-0000c474   element_23
-0000c47e   element_17
-0000c488   element_18
-0000c492   element_22
-0000c49c   element_21
-0000c4a6   element_11
-0000c4b0   element_16
-0000c4ba   sensor_0
+0000c374   TI_CTS_RO_PINOSC_TA0_WDTp_HAL
+0000c49e   _auto_init
+0000c4fc   __mspabi_srli
+0000c50a   __mspabi_srli_15
+0000c50e   __mspabi_srli_14
+0000c512   __mspabi_srli_13
+0000c516   __mspabi_srli_12
+0000c51a   __mspabi_srli_11
+0000c51e   __mspabi_srli_10
+0000c522   __mspabi_srli_9
+0000c526   __mspabi_srli_8
+0000c52a   __mspabi_srli_7
+0000c52e   __mspabi_srli_6
+0000c532   __mspabi_srli_5
+0000c536   __mspabi_srli_4
+0000c53a   __mspabi_srli_3
+0000c53e   __mspabi_srli_2
+0000c542   __mspabi_srli_1
+0000c548   _c_int00
+0000c548   _c_int00_noexit
+0000c562   __mspabi_mpyi
+0000c576   __mspabi_func_epilog_7
+0000c578   __mspabi_func_epilog_6
+0000c57a   __mspabi_func_epilog_5
+0000c57c   __mspabi_func_epilog_4
+0000c57e   __mspabi_func_epilog_3
+0000c580   __mspabi_func_epilog_2
+0000c582   __mspabi_func_epilog_1
+0000c586   TI_CAPT_Raw
+0000c594   watchdog_timer
+0000c59c   __TI_ISR_TRAP
+0000c5a2   _system_pre_init
+0000c5a6   C$$EXIT
+0000c5a6   abort
+0000c5aa   element_1
+0000c5b4   element_2
+0000c5be   element_3
+0000c5c8   element_4
+0000c5d2   element_5
+0000c5dc   element_6
+0000c5e6   element_7
+0000c5f0   element_8
+0000c5fa   element_9
+0000c604   element_10
+0000c60e   element_12
+0000c618   element_13
+0000c622   element_14
+0000c62c   element_15
+0000c636   element_19
+0000c640   element_20
+0000c64a   sensor_1
 0000ffe4   __TI_int02
 0000ffe6   __TI_int03
 0000ffea   __TI_int05
@@ -470,4 +481,4 @@ UNDEFED    __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
 
-[171 symbols]
+[177 symbols]

@@ -12,7 +12,7 @@
  #define CAP_VALUE(x, min, max) (x = x < min ? min: x > max ? max : x)
  
  int checkSurroundings(int x, int y);
- 
+#ifdef 0
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
 	uint16_t raw_value[9];
@@ -97,11 +97,13 @@ int checkSurroundings(int x, int y) {
 	
 	return status;
 }
-
+/*
 #pragma vector= PORT2_VECTOR,PORT1_VECTOR,ADC10_VECTOR,NMI_VECTOR,
                 TIMER0_A1_VECTOR,COMPARATORA_VECTOR,TIMER0_A0_VECTOR
 __interrupt void ISR_trap(void)
 {
-  /* the following will cause an access violation and result in a PUC reset */
+
   WDTCTL = 0;
 }
+*/
+#endif
